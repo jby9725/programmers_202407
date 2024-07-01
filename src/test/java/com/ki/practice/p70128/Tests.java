@@ -6,21 +6,21 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 // 입출력 예
-// n	return
-// 3	"수박수"
-// 4	"수박수박"
+// a	        b	            result
+// [1,2,3,4]	[-3,-1,0,2]	    3
+// [-1,0,1]	    [1,0,-1]	    -2
 
 public class Tests {
     @Test
-    @DisplayName("3 => \"수박수\"")
+    @DisplayName("[1,2,3,4] , [-3,-1,0,2] => 3")
     void t1() {
-        assertThat(new Solution().solution(3)).isEqualTo("수박수");
+        assertThat(new Solution().solution(new int[]{1,2,3,4}, new int[]{-3,-1,0,2})).isEqualTo(3);
     }
 
     @Test
-    @DisplayName("4 => \"수박수박\"")
+    @DisplayName("[-1,0,1] , [1,0,-1] => -2")
     void t2() {
-        assertThat(new Solution().solution(4)).isEqualTo("수박수박");
+        assertThat(new Solution().solution(new int[]{-1,0,1}, new int[]{1,0,-1})).isEqualTo(-2);
     }
 
 }

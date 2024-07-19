@@ -40,7 +40,7 @@ class Solution {
 
         int person_index = 0;
         for (int i = 0; i < answers.length; i++) {
-            if (answers[i] == person1[person_index]) {
+            if (answers[i] == person1[i % person1.length]) {
                 p_answer_count[0]++;
             }
             person_index++;
@@ -52,7 +52,7 @@ class Solution {
 
         person_index = 0;
         for (int i = 0; i < answers.length; i++) {
-            if (answers[i] == person2[person_index]) {
+            if (answers[i] == person2[i % person2.length]) {
                 p_answer_count[1]++;
             }
             person_index++;
@@ -63,7 +63,7 @@ class Solution {
 
         person_index = 0;
         for (int i = 0; i < answers.length; i++) {
-            if (answers[i] == person3[person_index]) {
+            if (answers[i] == person3[i % person3.length]) {
                 p_answer_count[2]++;
             }
             person_index++;
@@ -85,7 +85,7 @@ class Solution {
         for (int i = 0; i <= 2; i++) {
             System.out.println("i : " + i);
             if (p_answer_count[i] == max) {
-                list.add(i, i + 1);
+                list.add(i + 1);
             }
         }
 
@@ -99,101 +99,3 @@ class Solution {
         return answer;
     }
 }
-//        List<Integer> answer  = new ArrayList<>();
-//        int[] person1 = {1, 2, 3, 4, 5};
-//        int[] person2 = {2, 1, 2, 3, 2, 4, 2, 5};
-//        int[] person3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-//        int p1_answer_count = 0;
-//        int p2_answer_count = 0;
-//        int p3_answer_count = 0;
-//        int best_person = 0;
-//
-//        int person_index = 0;
-//        for (int i = 0; i < answers.length; i++) {
-//            if (answers[i] == person1[person_index]) {
-//                p1_answer_count++;
-//            }
-//            person_index++;
-//            if (person_index == 5)
-//                person_index = 0;
-//        }
-//
-//        System.out.println("p1_answer_count : " + p1_answer_count);
-//        answer.add(0);
-//
-//        person_index = 0;
-//        for (int i = 0; i < answers.length; i++) {
-//            if (answers[i] == person2[person_index]) {
-//                p2_answer_count++;
-//            }
-//            person_index++;
-//            if (person_index == 8)
-//                person_index = 0;
-//        }
-//        System.out.println("p2_answer_count : " + p2_answer_count);
-//        if(answer.get(best_person) == p2_answer_count)
-//            answer.add(1);
-//        else {
-//            if(answer.get(best_person) < p2_answer_count) {
-//                best_person = 1;
-//                answer.clear();
-//                answer.add(1);
-//            }
-//        }
-//
-//        person_index = 0;
-//        for (int i = 0; i < answers.length; i++) {
-//            if (answers[i] == person3[person_index]) {
-//                p3_answer_count++;
-//            }
-//            person_index++;
-//            if (person_index == 10)
-//                person_index = 0;
-//        }
-//        System.out.println("p3_answer_count : " + p3_answer_count);
-//        if(answer.get(best_person) == p3_answer_count)
-//            answer.add(2);
-//        else {
-//            if(answer.get(best_person) < p3_answer_count) {
-//                answer.clear();
-//                answer.add(2);
-//            }
-//        }
-//
-//        List<Integer> person_count_list = new ArrayList<>();
-//        person_count_list.add(p1_answer_count);
-//        person_count_list.add(p2_answer_count);
-//        person_count_list.add(p3_answer_count);
-//
-//        // person1 <val>,person2 <val>, person3 <val>
-////        System.out.println("list : " + person_count_list);
-//
-//        best_person = 0;
-//
-//        for (int i = 0; i < person_count_list.size(); i++) {
-//            if(person_count_list.get(i) == person_count_list.get(best_person)){
-//                best_person = i;
-//                answer.add(i+1);
-//            }
-//        }
-////
-////        System.out.println("best_person : " + best_person);
-////        System.out.println("person_count_list[best_person] : " + person_count_list.get(best_person));
-////        System.out.println("answer : " + answer);
-//
-//        // max 값 찾아서 person 정보 저장
-//        // max 값 다른 애들한테서 확인
-//        // 같으면 person 정보 저장
-//        // 다르면 빠져나옴
-//        // max 값 다른 애들한테서 확인
-//
-//        int size = answer.size();
-//
-//        int[] temp = new int[size];
-//
-//        for(int i = 0; i < size; i++){
-//            temp[i] = answer.get(i);
-//        }
-//
-//        return temp;
-//    }

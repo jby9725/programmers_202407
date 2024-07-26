@@ -5,22 +5,23 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-//입출력 예
-// message	            result
-// "happy birthday!"	30
-// "I love you~"	    22
+// 입출력 예
+// dot	    result
+// [2, 4]	1
+// [-7, 9]	2
+
 
 public class Tests {
     @Test
-    @DisplayName("\"happy birthday!\" => 30")
+    @DisplayName("[2, 4] => 1")
     void t1() {
-        assertThat(new Solution().solution("happy birthday!")).isEqualTo(30);
+        assertThat(new Solution().solution(new int[]{2, 4})).isEqualTo(1);
     }
 
     @Test
-    @DisplayName("\"I love you~\" => 22")
+    @DisplayName("[-7, 9] => 2")
     void t2() {
-        assertThat(new Solution().solution("I love you~")).isEqualTo(22);
+        assertThat(new Solution().solution(new int[]{-7, 9})).isEqualTo(2);
     }
 
 
